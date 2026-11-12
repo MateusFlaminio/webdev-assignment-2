@@ -1,0 +1,72 @@
+/* Reset and base styles */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	scroll-padding-top: var(--nav-height);
+
+	@media (prefers-reduced-motion: no-preference) {
+		scroll-behavior: smooth;
+	}
+}
+
+button {
+	padding: 0;
+	border: 0;
+	background: none;
+	font: inherit;
+	color: inherit;
+	cursor: pointer;
+}
+
+body {
+	min-height: 100dvh;
+	background: var(--page);
+	color: var(--ink);
+	font-family: var(--font-body);
+	font-size: var(--text-base);
+	font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-weight: 800;
+	line-height: 1.1;
+	letter-spacing: -0.02em;
+	text-wrap: balance;
+}
+
+p {
+	text-wrap: pretty;
+}
+
+:focus-visible {
+	outline: 3px solid var(--focus);
+	outline-offset: 2px;
+}
+
+::selection {
+	background: var(--accent);
+	color: #403b27;
+}
+
+.monospace {
+	font-family: var(--font-monospace);
+}
+
+.hidden {
+	display: none;
+}
+
+.kicker {
+	color: var(--kicker);
+	font: 700 var(--text-tiny) / 1.2 var(--font-monospace);
+	letter-spacing: 0.07em;
+	text-transform: uppercase;
+}

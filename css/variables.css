@@ -1,0 +1,98 @@
+/* CSS variables for the design system */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+:root {
+	color-scheme: light dark;
+
+	/* Surfaces and text */
+	--page: light-dark(#e8e5dc, #11100d);
+	--background: light-dark(#f2f0e8, #1b1a17);
+	--panel: light-dark(#fcfbf7, #272520);
+	--panel-soft: light-dark(#f6f4ed, #211f1b);
+	--edge: light-dark(#d6d1c2, #48443a);
+	--ink: light-dark(#4f4b3f, #f2eedf);
+	--muted: light-dark(#6b6657, #a8a18c);
+	--kicker: light-dark(#7b6210, #e3c04a);
+	--footer: #2a2822;
+
+	/* Accent */
+	--accent: #ffdc5e;
+	--accent-dark: #d9ac17;
+	--accent-ink: #49401f;
+	--focus: light-dark(#755c00, #ffdc5e);
+
+	/* Button */
+	--button-top: #ffe784;
+	--button-edge: #b8951d;
+	--button-hard: #b89318;
+
+	/* Depth */
+	--shadow: light-dark(rgb(79 75 63 / 0.16), rgb(0 0 0 / 0.38));
+	--hard: light-dark(#b8b2a0, #0a0907);
+	--ring: light-dark(rgb(255 255 255 / 0.42), rgb(255 255 255 / 0.04));
+	--ring-strong: light-dark(#fff, rgb(255 255 255 / 0.04));
+
+	/* Round controls */
+	--control-top: light-dark(#fff, #413e35);
+	--control-bottom: light-dark(#ece9df, #2c2a24);
+	--control-edge: light-dark(#c9c3b1, #5c584b);
+
+	/* Pinstripe ground */
+	--glow: light-dark(rgb(255 255 255 / 0.8), #38352c);
+	--stripe: light-dark(rgb(79 75 63 / 0.035), rgb(255 255 255 / 0.05));
+	--ground: radial-gradient(ellipse at 50% 0%, var(--glow), transparent 32%), repeating-linear-gradient(0deg, transparent 0 3px, var(--stripe) 3px 4px), var(--background);
+
+	/* Soft tints for windows */
+	--butter-start: light-dark(#fff9dc, #494330);
+	--butter-end: light-dark(#f4e5a3, #393629);
+	--mint-start: light-dark(#e7f4ee, #31443d);
+	--mint-end: light-dark(#cce7dd, #283a34);
+	--blue-start: light-dark(#e7f1f5, #30434d);
+	--blue-end: light-dark(#cbdee7, #293840);
+
+	/* Type */
+	--font-body: "Nunito", ui-rounded, system-ui, -apple-system, "Segoe UI", sans-serif;
+	--font-monospace: "Space Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+	--text-tiny: 0.75rem;
+	--text-small: 0.875rem;
+	--text-base: 1rem;
+	--text-medium: 1.125rem;
+	--text-large: 1.5rem;
+	--text-extra-large: 2rem;
+	--text-heading: clamp(2.25rem, 5vw, 3.25rem);
+	--text-hero: clamp(2.75rem, 6.4vw, 4.5rem);
+
+	/* Space, radius and layout */
+	--space-1: 0.25rem;
+	--space-2: 0.5rem;
+	--space-3: 0.75rem;
+	--space-4: 1rem;
+	--space-5: 1.5rem;
+	--space-6: 2rem;
+	--space-7: 3rem;
+	--space-8: 5rem;
+	--radius-small: 5px;
+	--radius-medium: 9px;
+	--radius-large: 14px;
+	--radius-extra-large: 18px;
+	--radius-pill: 999px;
+	--content-width: 1180px;
+	--gutter: clamp(16px, 4vw, 26px);
+	--nav-height: 64px;
+
+	/* Motion */
+	--motion-in: 0.150s;
+	--motion-out: 0.120s;
+	--motion-press: 0.090s;
+
+	&[data-theme="light"] {
+		color-scheme: light;
+	}
+
+	&[data-theme="dark"] {
+		color-scheme: dark;
+	}
+}

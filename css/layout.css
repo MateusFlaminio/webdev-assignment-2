@@ -1,0 +1,34 @@
+/* Layout and page structure */
+
+.site {
+	min-height: 100dvh;
+	background: var(--ground);
+}
+
+/* Centered content column */
+.container {
+	max-width: var(--content-width);
+	margin-inline: auto;
+	padding-inline: var(--gutter);
+}
+
+/* A section of the page; later steps add the real content */
+.section {
+	padding-block: var(--space-8);
+
+	& > .kicker {
+		display: block;
+		margin-bottom: var(--space-3);
+	}
+
+	& > h1 {
+		font-size: var(--text-hero);
+		letter-spacing: -0.05em;
+	}
+
+	& > p {
+		max-width: 46ch;
+		margin-top: var(--space-4);
+		color: var(--muted);
+	}
+}

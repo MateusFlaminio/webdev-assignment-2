@@ -1,0 +1,223 @@
+/* Navigation bar */
+
+.navbar {
+	position: sticky;
+	top: 0;
+	z-index: 30;
+	height: var(--nav-height);
+	background: color-mix(in srgb, var(--panel) 88%, transparent);
+	border-bottom: 1px solid var(--edge);
+	box-shadow: 0 3px 13px color-mix(in srgb, var(--shadow) 42%, transparent);
+	backdrop-filter: blur(15px);
+
+	.navbar-inner {
+		display: flex;
+		align-items: center;
+		gap: var(--space-5);
+		height: 100%;
+
+		.brand {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			color: var(--ink);
+			text-decoration: none;
+
+			.brand-orb {
+				flex: none;
+				width: 40px;
+				height: 40px;
+				overflow: hidden;
+				border: 2px solid var(--panel);
+				border-radius: 50%;
+				outline: 2px solid var(--accent-dark);
+
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+
+			.brand-text {
+				b {
+					display: block;
+					font-family: var(--font-monospace);
+					line-height: 1.2;
+					font-size: var(--text-tiny);
+				}
+
+				small {
+					display: block;
+					font-family: var(--font-monospace);
+					line-height: 1.2;
+					padding-top: 2px;
+					color: var(--muted);
+					font-size: var(--text-tiny);
+
+					@media (max-width: 620px) {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+.nav-links {
+	display: flex;
+	gap: var(--space-5);
+	margin-left: auto;
+
+	a {
+		color: var(--muted);
+		font-size: var(--text-small);
+		font-weight: 800;
+		text-decoration: none;
+		transition: color var(--motion-out);
+
+		&:hover {
+			color: var(--ink);
+		}
+	}
+
+	@media (max-width: 900px) {
+		display: none;
+		position: absolute;
+		top: calc(var(--nav-height) + 8px);
+		left: var(--gutter);
+		right: var(--gutter);
+		flex-direction: column;
+		gap: 2px;
+		padding: var(--space-3);
+		border: 2px solid var(--edge);
+		border-radius: var(--radius-large);
+		background: var(--panel);
+		box-shadow: 0 10px 30px var(--shadow);
+
+		&.open {
+			display: flex;
+		}
+
+		a {
+			padding: var(--space-3);
+			border-radius: var(--radius-medium);
+
+			&:hover {
+				background: var(--panel-soft);
+			}
+		}
+	}
+}
+
+.nav-actions {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding-left: var(--space-5);
+	border-left: 1px solid var(--edge);
+
+	@media (max-width: 900px) {
+		margin-left: auto;
+	}
+
+	@media (max-width: 620px) {
+		padding-left: 0;
+		border-left: 0;
+	}
+
+	.nav-clock {
+		min-width: 3.4em;
+		color: var(--muted);
+		font-size: var(--text-tiny);
+		text-align: right;
+
+		@media (max-width: 620px) {
+			display: none;
+		}
+	}
+
+	.round-button {
+		display: grid;
+		place-items: center;
+		width: 38px;
+		height: 38px;
+		color: var(--ink);
+		border: 1px solid var(--control-edge);
+		border-radius: 50%;
+		background: linear-gradient(var(--control-top), var(--control-bottom));
+		box-shadow: inset 0 0 0 3px var(--ring-strong), 0 2px 4px var(--shadow);
+		transition: transform var(--motion-out);
+
+		&:hover {
+			transform: translateY(-1px);
+		}
+
+		&:active {
+			transform: scale(0.95);
+			transition-duration: var(--motion-press);
+		}
+
+		/* The icon is an SVG file used as a mask, so it takes the button's text color */
+		.icon {
+			width: 18px;
+			height: 18px;
+			background-color: currentColor;
+			mask-position: center;
+			mask-size: contain;
+			mask-repeat: no-repeat;
+		}
+	}
+
+	.theme-button .icon {
+		mask-image: url("../assets/icons/theme.svg");
+	}
+
+	.menu-button {
+		display: none;
+
+		@media (max-width: 900px) {
+			display: grid;
+		}
+
+		.icon {
+			mask-image: url("../assets/icons/menu.svg");
+		}
+	}
+}
+
+.theme-container {
+	position: relative;
+
+	.theme-menu {
+		position: absolute;
+		top: calc(100% + 8px);
+		right: 0;
+		min-width: 150px;
+		padding: 6px;
+		border: 2px solid var(--edge);
+		border-radius: var(--radius-large);
+		background: var(--panel);
+		box-shadow: inset 0 0 0 3px var(--ring), 0 10px 24px var(--shadow);
+
+		button {
+			display: block;
+			width: 100%;
+			min-height: 40px;
+			padding: 0 12px;
+			border-radius: var(--radius-medium);
+			font-size: var(--text-small);
+			font-weight: 800;
+			text-align: left;
+
+			&:hover {
+				background: var(--panel-soft);
+			}
+
+			&[aria-pressed="true"] {
+				background: linear-gradient(var(--button-top), var(--accent));
+				color: var(--accent-ink);
+			}
+		}
+	}
+}
