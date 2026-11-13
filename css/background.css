@@ -1,0 +1,59 @@
+.timeline,
+.courses-grid {
+	h3 {
+		font-size: var(--text-large);
+	}
+
+	.panel-body p:last-child {
+		color: var(--muted);
+	}
+}
+
+.timeline {
+	position: relative;
+	display: grid;
+	gap: var(--space-5);
+	padding-left: 36px;
+	list-style: none;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: var(--space-2);
+		bottom: var(--space-2);
+		left: 7px;
+		width: 2px;
+		background: var(--edge);
+	}
+
+	.timeline-item {
+		position: relative;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 22px;
+			left: -36px;
+			width: 16px;
+			height: 16px;
+			border: 2px solid var(--button-edge);
+			border-radius: 50%;
+			background: var(--accent);
+		}
+	}
+
+	.institution {
+		color: var(--ink);
+		font-weight: 800;
+	}
+}
+
+.courses-grid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 14px;
+
+	.panel {
+		flex: 1 1 320px;
+	}
+}
