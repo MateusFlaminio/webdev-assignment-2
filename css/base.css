@@ -1,4 +1,5 @@
-/* Reset and base styles */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 * {
 	margin: 0;
@@ -38,7 +39,6 @@ h3,
 h4 {
 	font-weight: 800;
 	line-height: 1.1;
-	letter-spacing: -0.02em;
 	text-wrap: balance;
 }
 
@@ -67,6 +67,5 @@ p {
 .kicker {
 	color: var(--kicker);
 	font: 700 var(--text-tiny) / 1.2 var(--font-monospace);
-	letter-spacing: 0.07em;
 	text-transform: uppercase;
 }

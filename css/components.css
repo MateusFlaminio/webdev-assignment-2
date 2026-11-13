@@ -1,0 +1,210 @@
+/* icons are svgs with masks so that they take the text color */
+.icon,
+.logo {
+	display: inline-block;
+	flex: none;
+	background-color: currentColor;
+	mask-position: center;
+	mask-size: contain;
+	mask-repeat: no-repeat;
+}
+
+.icon {
+	width: 18px;
+	height: 18px;
+}
+
+.logo {
+	width: 24px;
+	height: 24px;
+}
+
+.icon-arrow-right {
+	mask-image: url("../assets/icons/arrow-right.svg");
+}
+
+.icon-book-open {
+	mask-image: url("../assets/icons/book-open.svg");
+}
+
+.icon-briefcase {
+	mask-image: url("../assets/icons/briefcase.svg");
+}
+
+.icon-check {
+	mask-image: url("../assets/icons/check.svg");
+}
+
+.icon-copy {
+	mask-image: url("../assets/icons/copy.svg");
+}
+
+.icon-graduation-cap {
+	mask-image: url("../assets/icons/graduation-cap.svg");
+}
+
+.icon-mail {
+	mask-image: url("../assets/icons/mail.svg");
+}
+
+.icon-menu {
+	mask-image: url("../assets/icons/menu.svg");
+}
+
+.icon-terminal {
+	mask-image: url("../assets/icons/terminal.svg");
+}
+
+.icon-theme {
+	mask-image: url("../assets/icons/theme.svg");
+}
+
+.icon-user {
+	mask-image: url("../assets/icons/user.svg");
+}
+
+.logo-github {
+	mask-image: url("../assets/logos/github.svg");
+}
+
+.logo-linkedin {
+	mask-image: url("../assets/logos/linkedin.svg");
+}
+
+.panel {
+	min-width: 0;
+	overflow: hidden;
+	border: 2px solid var(--edge);
+	border-radius: var(--radius-large);
+	background: var(--panel);
+	box-shadow: inset 0 0 0 4px var(--ring), 0 4px 8px var(--shadow);
+}
+
+.panel-body {
+	display: grid;
+	gap: var(--space-4);
+	align-content: start;
+	padding: var(--space-5);
+}
+
+.channel-bar {
+	display: flex;
+	align-items: center;
+	gap: var(--space-2);
+	height: 36px;
+	padding-inline: var(--space-4);
+	border-bottom: 1px solid var(--button-edge);
+	background: linear-gradient(var(--button-top), var(--accent));
+	color: var(--accent-ink);
+	font: 700 var(--text-tiny) / 1 var(--font-monospace);
+	text-transform: uppercase;
+
+	.channel-title {
+		margin-right: auto;
+	}
+
+	.channel-dots {
+		display: flex;
+		gap: 5px;
+
+		span {
+			width: 7px;
+			height: 7px;
+			border: 1px solid var(--button-edge);
+			border-radius: 50%;
+			background: rgb(255 255 255 / 0.6);
+		}
+	}
+}
+
+.icon-tile {
+	display: grid;
+	place-items: center;
+	flex: none;
+	width: 52px;
+	height: 52px;
+	border: 1px solid var(--button-edge);
+	border-radius: 12px;
+	background: linear-gradient(var(--button-top), var(--accent));
+	box-shadow: inset 0 0 0 3px rgb(255 255 255 / 0.47), 3px 3px 0 var(--button-hard);
+	color: var(--accent-ink);
+
+	.icon {
+		width: 24px;
+		height: 24px;
+	}
+}
+
+.section-heading {
+	display: grid;
+	grid-template-columns: 52px auto 1fr;
+	align-items: center;
+	gap: 15px;
+	margin-bottom: var(--space-6);
+	padding-bottom: var(--space-4);
+	border-bottom: 1px solid var(--edge);
+
+	h2 {
+		margin-top: var(--space-1);
+		font-size: var(--text-extra-large);
+	}
+
+	p {
+		justify-self: end;
+		color: var(--muted);
+		font-size: var(--text-small);
+	}
+
+	@media (max-width: 640px) {
+		grid-template-columns: 46px 1fr;
+
+		p {
+			display: none;
+		}
+	}
+}
+
+.button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-3);
+	min-height: 44px;
+	padding-inline: 20px;
+	border: 1px solid var(--edge);
+	border-radius: var(--radius-medium);
+	background: var(--panel);
+	box-shadow: inset 0 0 0 3px var(--ring), 0 2px 4px var(--shadow);
+	color: var(--ink);
+	font-size: var(--text-small);
+	font-weight: 800;
+	text-decoration: none;
+	transition: transform var(--motion-out), box-shadow var(--motion-out);
+
+	&:hover {
+		transform: translateY(-1px);
+		transition-duration: var(--motion-in);
+	}
+
+	&:active {
+		transform: translateY(1px);
+		transition-duration: var(--motion-press);
+	}
+
+	&.primary {
+		border-color: var(--button-edge);
+		background: linear-gradient(var(--button-top), var(--accent));
+		box-shadow: inset 0 0 0 3px rgb(255 255 255 / 0.4), 3px 4px 0 var(--button-hard);
+		color: var(--accent-ink);
+
+		&:hover {
+			transform: translate(2px, 2px);
+			box-shadow: inset 0 0 0 3px rgb(255 255 255 / 0.4), 1px 2px 0 var(--button-hard);
+		}
+
+		&:active {
+			transform: translate(3px, 4px);
+			box-shadow: inset 0 0 0 3px rgb(255 255 255 / 0.4), 0 0 0 var(--button-hard);
+		}
+	}
+}

@@ -1,34 +1,62 @@
-/* Layout and page structure */
-
 .site {
+	display: flex;
+	flex-direction: column;
 	min-height: 100dvh;
 	background: var(--ground);
+
+	main {
+		flex: 1;
+	}
 }
 
-/* Centered content column */
 .container {
 	max-width: var(--content-width);
 	margin-inline: auto;
 	padding-inline: var(--gutter);
 }
 
-/* A section of the page; later steps add the real content */
 .section {
 	padding-block: var(--space-8);
 
-	& > .kicker {
+	@media (max-width: 620px) {
+		padding-block: var(--space-7);
+	}
+}
+
+.skip-link {
+	position: absolute;
+	top: -64px;
+	left: var(--space-3);
+	z-index: 40;
+	padding: 10px 14px;
+	border: 2px solid var(--focus);
+	border-radius: var(--radius-medium);
+	background: var(--panel);
+	color: var(--ink);
+	font-size: var(--text-small);
+	font-weight: 800;
+	text-decoration: none;
+
+	&:focus {
+		top: var(--space-3);
+	}
+}
+
+.page-header {
+	padding-top: var(--space-7);
+
+	.kicker {
 		display: block;
-		margin-bottom: var(--space-3);
+		margin-bottom: var(--space-2);
 	}
 
-	& > h1 {
-		font-size: var(--text-hero);
-		letter-spacing: -0.05em;
+	h1 {
+		font-size: var(--text-heading);
 	}
 
-	& > p {
+	p {
 		max-width: 46ch;
-		margin-top: var(--space-4);
+		margin-top: var(--space-3);
 		color: var(--muted);
 	}
 }
