@@ -1,0 +1,117 @@
+.console {
+	display: grid;
+	grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+	min-height: 320px;
+
+	@media (max-width: 900px) {
+		grid-template-columns: 1fr;
+	}
+
+	.console-art {
+		display: grid;
+		place-items: center;
+		border-right: 1px solid var(--edge);
+		background: radial-gradient(circle, var(--glow) 0 70px, transparent 71px), linear-gradient(145deg, var(--butter-start), var(--butter-end));
+
+		@media (max-width: 900px) {
+			min-height: 200px;
+			border-right: 0;
+			border-bottom: 1px solid var(--edge);
+		}
+
+		.orb {
+			display: grid;
+			place-items: center;
+			width: 100px;
+			height: 100px;
+			border: 2px solid var(--button-edge);
+			border-radius: 50%;
+			background: linear-gradient(var(--button-top), var(--accent));
+			box-shadow: inset 0 0 0 6px rgb(255 255 255 / 0.47), 6px 7px 0 var(--button-hard);
+			color: var(--accent-ink);
+
+			.icon {
+				width: 40px;
+				height: 40px;
+			}
+		}
+	}
+
+	.console-text {
+		display: grid;
+		gap: var(--space-3);
+		align-content: center;
+		padding: 36px 40px;
+
+		@media (max-width: 620px) {
+			padding: var(--space-5);
+		}
+
+		h2 {
+			font-size: var(--text-heading);
+			line-height: 1.05;
+		}
+
+		p {
+			max-width: 44ch;
+			color: var(--muted);
+			line-height: 1.7;
+		}
+
+		.copy-button {
+			width: fit-content;
+			max-width: 100%;
+			margin-top: var(--space-2);
+			font-family: var(--font-monospace);
+		}
+	}
+}
+
+.contact-links {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: var(--space-3);
+	margin-top: var(--space-4);
+
+	@media (max-width: 620px) {
+		grid-template-columns: 1fr;
+	}
+
+	.contact-link {
+		display: grid;
+		grid-template-columns: 30px 1fr 18px;
+		align-items: center;
+		gap: 13px;
+		padding: var(--space-4) 18px;
+		border: 1px solid var(--edge);
+		border-radius: var(--radius-medium);
+		background: var(--panel);
+		color: var(--ink);
+		text-decoration: none;
+		transition: transform var(--motion-out);
+
+		&:hover {
+			border-color: var(--accent-dark);
+			outline: 3px solid var(--accent);
+			outline-offset: 2px;
+			transform: translateY(-4px);
+			transition-duration: var(--motion-in);
+		}
+
+		.logo {
+			width: 28px;
+			height: 28px;
+		}
+
+		b {
+			display: block;
+		}
+
+		small {
+			display: block;
+			margin-top: 2px;
+			color: var(--muted);
+			font-size: var(--text-tiny);
+		}
+	}
+}

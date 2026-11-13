@@ -1,0 +1,20 @@
+[
+	{ "name": "HTML", "logo": "html5" },
+	{ "name": "CSS", "logo": "css3" },
+	{ "name": "JavaScript", "logo": "javascript" },
+	{ "name": "TypeScript", "logo": "typescript" },
+	{ "name": "Python", "logo": "python" },
+	{ "name": "C", "logo": "c" },
+	{ "name": "C++", "logo": "cplusplus" },
+	{ "name": "Java", "logo": "openjdk" },
+	{ "name": "SQL", "logo": "postgresql" },
+	{ "name": "Node.js", "logo": "nodedotjs" },
+	{ "name": "React", "logo": "react" },
+	{ "name": "Tailwind CSS", "logo": "tailwindcss" },
+	{ "name": "SCSS", "logo": "sass" },
+	{ "name": "Shell", "logo": "gnubash" },
+	{ "name": "Linux", "logo": "linux" },
+	{ "name": "Docker", "logo": "docker" },
+	{ "name": "Git", "logo": "git" },
+	{ "name": "GitHub", "logo": "github" }
+]
