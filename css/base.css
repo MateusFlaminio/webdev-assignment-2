@@ -16,27 +16,23 @@ html {
 }
 
 button {
-	padding: 0;
 	border: 0;
 	background: none;
-	font: inherit;
+	font-family: inherit;
+	font-size: inherit;
 	color: inherit;
 	cursor: pointer;
 }
 
 body {
-	min-height: 100dvh;
 	background: var(--page);
 	color: var(--ink);
 	font-family: var(--font-body);
-	font-size: var(--text-base);
-	font-weight: 400;
 }
 
 h1,
 h2,
-h3,
-h4 {
+h3 {
 	font-weight: 800;
 	line-height: 1.1;
 	text-wrap: balance;
@@ -56,16 +52,15 @@ p {
 	color: #403b27;
 }
 
-.monospace {
-	font-family: var(--font-monospace);
-}
-
 .hidden {
-	display: none;
+	display: none !important;
 }
 
 .kicker {
 	color: var(--kicker);
-	font: 700 var(--text-tiny) / 1.2 var(--font-monospace);
+	font-family: var(--font-monospace);
+	font-size: var(--text-tiny);
+	font-weight: 700;
+	line-height: 1.2;
 	text-transform: uppercase;
 }

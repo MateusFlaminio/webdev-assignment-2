@@ -43,7 +43,6 @@
 	}
 
 	.institution {
-		color: var(--ink);
 		font-weight: 800;
 	}
 }

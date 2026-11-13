@@ -19,7 +19,8 @@
 		<script src="js/theme.js" defer></script>
 		<script src="js/clock.js" defer></script>
 		<script src="js/nav.js" defer></script>
-		<script src="js/contact.js" defer></script>
+		<script src="js/repositories.js" defer></script>
+		<script src="js/repo-count.js" defer></script>
 		<script src="js/skills.js" defer></script>
 	</head>
 
@@ -29,7 +30,7 @@
 		<div class="site">
 			<header class="navbar">
 				<div class="container navbar-inner">
-					<a class="brand" href="index.html">
+					<a class="brand" href="./">
 						<span class="brand-orb">
 							<img src="assets/placeholder.webp" alt="placeholder">
 						</span>
@@ -40,13 +41,13 @@
 					</a>
 
 					<nav class="nav-links" id="site-nav" aria-label="Main">
-						<a href="index.html" aria-current="page">Home</a>
-						<a href="background.html">Background</a>
-						<a href="projects.html">Projects</a>
+						<a href="./" aria-current="page">Home</a>
+						<a href="background">Background</a>
+						<a href="projects">Projects</a>
 					</nav>
 
 					<div class="nav-actions">
-						<span class="nav-clock monospace" id="clock">--:--</span>
+						<span class="nav-clock" id="clock">--:--</span>
 
 						<div class="theme-container">
 							<button class="round-button theme-button" type="button" title="Theme" aria-label="Theme" aria-expanded="false" aria-controls="theme-menu">
@@ -89,8 +90,8 @@
 								<span>Student · University of Coimbra</span>
 							</div>
 							<div class="profile-stats">
-								<span><b>x</b> Repos</span>
-								<span><b class="skills-count">x</b> Skills</span>
+								<span><b class="repos-count">–</b> Repos</span>
+								<span><b class="skills-count">–</b> Skills</span>
 								<span><b>AI/ML</b> Focus</span>
 							</div>
 						</div>
@@ -115,7 +116,7 @@
 								I have worked in a variety of projects, ranging from web development to machine learning applications.
 							</p>
 							<div class="about-links">
-								<a class="text-link" href="projects.html">See my projects <span class="icon icon-arrow-right" aria-hidden="true"></span></a>
+								<a class="text-link" href="projects">See my projects <span class="icon icon-arrow-right" aria-hidden="true"></span></a>
 								<a class="text-link" href="#contact">Get in touch <span class="icon icon-arrow-right" aria-hidden="true"></span></a>
 							</div>
 						</div>
@@ -140,17 +141,13 @@
 				<section class="section container" id="contact" aria-labelledby="contact-title">
 					<div class="panel console">
 						<div class="console-art" aria-hidden="true">
-							<span class="orb"><span class="icon icon-mail"></span></span>
+							<span class="orb"><span class="icon icon-message-circle"></span></span>
 						</div>
 
 						<div class="console-text">
 							<span class="kicker">Message board</span>
 							<h2 id="contact-title">Send me a message.</h2>
-							<p>You can send me an email, and you can find me on LinkedIn and check my projects on GitHub.</p>
-							<button class="button primary copy-button" type="button">
-								<span class="copy-label" aria-live="polite">hello@mateus.example</span>
-								<span class="icon icon-copy" aria-hidden="true"></span>
-							</button>
+							<p>You can find me on LinkedIn and check my projects on GitHub.</p>
 						</div>
 					</div>
 

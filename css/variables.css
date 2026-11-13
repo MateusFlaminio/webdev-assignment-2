@@ -25,9 +25,9 @@
 
 	/* Depth */
 	--shadow: light-dark(rgb(79 75 63 / 0.16), rgb(0 0 0 / 0.38));
-	--hard: light-dark(#b8b2a0, #0a0907);
 	--ring: light-dark(rgb(255 255 255 / 0.42), rgb(255 255 255 / 0.04));
 	--ring-strong: light-dark(#fff, rgb(255 255 255 / 0.04));
+	--gloss: light-dark(rgb(255 255 255 / 0.65), rgb(255 255 255 / 0.08));
 
 	/* Round controls */
 	--control-top: light-dark(#fff, #413e35);
@@ -52,7 +52,6 @@
 	--font-monospace: "Space Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 	--text-tiny: 0.75rem;
 	--text-small: 0.875rem;
-	--text-base: 1rem;
 	--text-medium: 1.125rem;
 	--text-large: 1.5rem;
 	--text-extra-large: 2rem;
@@ -68,7 +67,6 @@
 	--space-6: 2rem;
 	--space-7: 3rem;
 	--space-8: 5rem;
-	--radius-small: 5px;
 	--radius-medium: 9px;
 	--radius-large: 14px;
 	--radius-extra-large: 18px;

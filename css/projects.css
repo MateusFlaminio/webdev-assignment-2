@@ -1,0 +1,130 @@
+.project-loading {
+	color: var(--muted);
+}
+
+.project-stage {
+	display: grid;
+	grid-template-columns: auto minmax(0, 1fr) auto;
+	align-items: center;
+	gap: var(--space-4);
+
+	&:has(.page-arrow.hidden) {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	@media (max-width: 560px) {
+		grid-template-columns: 1fr 1fr;
+
+		.project-grid {
+			grid-column: 1 / -1;
+			grid-row: 1;
+		}
+
+		.previous {
+			justify-self: end;
+		}
+	}
+}
+
+.project-grid {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: var(--space-5) var(--space-4);
+
+	@media (max-width: 900px) {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	@media (max-width: 560px) {
+		grid-template-columns: 1fr;
+	}
+}
+
+.empty-slot {
+	position: relative;
+	display: grid;
+	place-items: center;
+	aspect-ratio: 16 / 10;
+	overflow: hidden;
+	border: 3px solid var(--panel);
+	border-radius: var(--radius-extra-large);
+	background: repeating-linear-gradient(0deg, transparent 0 3px, var(--stripe) 3px 4px), linear-gradient(145deg, var(--panel-soft), var(--edge));
+	box-shadow: 0 0 0 1px var(--edge), inset 0 2px 8px var(--shadow);
+	color: var(--muted);
+	font-family: var(--font-monospace);
+	font-size: var(--text-large);
+	font-weight: 700;
+	line-height: 1.2;
+	text-transform: uppercase;
+	animation: enter 0.6s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+	animation-delay: calc(var(--index, 0) * 40ms);
+
+	&::after {
+		content: "";
+		position: absolute;
+		inset: 0 0 45%;
+		background: linear-gradient(var(--gloss), transparent);
+		pointer-events: none;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		animation: none;
+	}
+
+	@media (max-width: 900px) {
+		display: none;
+	}
+}
+
+@keyframes enter {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+}
+
+.page-arrow {
+	width: 56px;
+	height: 56px;
+
+	&:disabled {
+		visibility: hidden;
+	}
+
+	.icon {
+		width: 26px;
+		height: 26px;
+	}
+
+	&.previous .icon {
+		transform: scaleX(-1);
+	}
+
+	@media (max-width: 900px) {
+		width: 44px;
+		height: 44px;
+	}
+}
+
+.page-status {
+	color: var(--muted);
+	font-family: var(--font-monospace);
+	font-size: var(--text-tiny);
+	line-height: 1.2;
+	text-align: center;
+}
+
+.project-error {
+	max-width: 640px;
+
+	p {
+		color: var(--muted);
+		line-height: 1.7;
+	}
+
+	.project-error-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-3);
+	}
+}

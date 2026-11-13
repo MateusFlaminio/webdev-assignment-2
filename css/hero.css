@@ -37,8 +37,6 @@
 }
 
 .profile-card {
-	position: relative;
-	z-index: 1;
 	width: 262px;
 	box-shadow: inset 0 0 0 4px var(--ring), 8px 9px 0 color-mix(in srgb, var(--edge) 65%, transparent), 0 15px 35px var(--shadow);
 
@@ -51,6 +49,16 @@
 			height: 100%;
 			object-fit: cover;
 		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			inset: 0;
+			background:
+				linear-gradient(color-mix(in srgb, var(--gloss) 55%, transparent), transparent) top / 100% 45% no-repeat,
+				repeating-linear-gradient(0deg, transparent 0 3px, var(--stripe) 3px 4px);
+			pointer-events: none;
+		}
 	}
 
 	.profile-name {
@@ -60,14 +68,18 @@
 
 		strong {
 			display: block;
-			font: 700 var(--text-tiny) / 1.2 var(--font-monospace);
+			font-family: var(--font-monospace);
+			font-size: var(--text-tiny);
+			line-height: 1.2;
 		}
 
 		span {
 			display: block;
 			margin-top: var(--space-1);
 			color: var(--muted);
-			font: var(--text-tiny) / 1.2 var(--font-monospace);
+			font-family: var(--font-monospace);
+			font-size: var(--text-tiny);
+			line-height: 1.2;
 			text-transform: uppercase;
 		}
 	}
@@ -93,7 +105,9 @@
 		b {
 			display: block;
 			color: var(--ink);
-			font: 700 var(--text-small) / 1.4 var(--font-monospace);
+			font-family: var(--font-monospace);
+			font-size: var(--text-small);
+			line-height: 1.4;
 		}
 	}
 }

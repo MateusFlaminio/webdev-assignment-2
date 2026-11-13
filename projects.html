@@ -10,8 +10,12 @@
 		<link rel="stylesheet" href="css/layout.css">
 		<link rel="stylesheet" href="css/components.css">
 		<link rel="stylesheet" href="css/nav.css">
+		<link rel="stylesheet" href="css/projects.css">
 		<link rel="stylesheet" href="css/footer.css">
 
+		<script src="js/repositories.js"></script>
+		<script src="js/repo-card.js"></script>
+		<script src="js/projects.js"></script>
 		<script src="js/theme.js" defer></script>
 		<script src="js/clock.js" defer></script>
 		<script src="js/nav.js" defer></script>
@@ -23,7 +27,7 @@
 		<div class="site">
 			<header class="navbar">
 				<div class="container navbar-inner">
-					<a class="brand" href="index.html">
+					<a class="brand" href="./">
 						<span class="brand-orb">
 							<img src="assets/placeholder.webp" alt="placeholder">
 						</span>
@@ -34,13 +38,13 @@
 					</a>
 
 					<nav class="nav-links" id="site-nav" aria-label="Main">
-						<a href="index.html">Home</a>
-						<a href="background.html">Background</a>
-						<a href="projects.html" aria-current="page">Projects</a>
+						<a href="./">Home</a>
+						<a href="background">Background</a>
+						<a href="projects" aria-current="page">Projects</a>
 					</nav>
 
 					<div class="nav-actions">
-						<span class="nav-clock monospace" id="clock">--:--</span>
+						<span class="nav-clock" id="clock">--:--</span>
 
 						<div class="theme-container">
 							<button class="round-button theme-button" type="button" title="Theme" aria-label="Theme" aria-expanded="false" aria-controls="theme-menu">
@@ -65,11 +69,45 @@
 				<header class="container page-header">
 					<span class="kicker">Project channels</span>
 					<h1>Projects</h1>
-					<p>Straight from my GitHub.</p>
+					<p>Public repositories from my GitHub profile.</p>
 				</header>
 
 				<section class="section container" id="repositories" aria-label="Repositories">
-					<p>My repositories will show up here.</p>
+					<p class="project-loading">Loading repositories…</p>
+
+					<div class="panel project-error hidden" role="alert">
+						<div class="panel-body">
+							<h2>I couldn't load my repositories</h2>
+							<p>GitHub didn't answer. You might be offline, or GitHub's request limit was reached. Try again in a moment, or open my profile directly.</p>
+							<div class="project-error-actions">
+								<button class="button primary" type="button">Try again</button>
+								<a class="button" href="https://github.com/MateusFlaminio" target="_blank" rel="noopener">Open my GitHub profile</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="panel project-board hidden">
+						<div class="channel-bar">
+							<span class="channel-title">Channels</span>
+							<span class="channel-dots" aria-hidden="true"><span></span><span></span><span></span></span>
+						</div>
+
+						<div class="panel-body">
+							<div class="project-stage">
+								<button class="round-button page-arrow previous hidden" type="button" aria-label="Previous page">
+									<span class="icon icon-arrow-right" aria-hidden="true"></span>
+								</button>
+
+								<div class="project-grid"></div>
+
+								<button class="round-button page-arrow next hidden" type="button" aria-label="Next page">
+									<span class="icon icon-arrow-right" aria-hidden="true"></span>
+								</button>
+							</div>
+
+							<p class="page-status hidden" aria-live="polite"></p>
+						</div>
+					</div>
 				</section>
 			</main>
 
