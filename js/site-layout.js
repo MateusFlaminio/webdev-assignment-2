@@ -33,7 +33,7 @@ class SiteHeader extends HTMLElement {
 						<span class="nav-clock" data-clock="time">--:--</span>
 
 						<div class="theme-container">
-							<button class="round-button theme-button" type="button" title="Theme" aria-label="Theme" aria-expanded="false" aria-controls="theme-menu">
+							<button class="round-button theme-button" type="button" aria-label="Theme" data-tooltip="Theme" data-tooltip-position="bottom" aria-expanded="false" aria-controls="theme-menu">
 								<span class="icon icon-theme" aria-hidden="true"></span>
 							</button>
 
@@ -44,7 +44,7 @@ class SiteHeader extends HTMLElement {
 							</div>
 						</div>
 
-						<button class="round-button menu-button" type="button" title="Menu" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">
+						<button class="round-button menu-button" type="button" aria-label="Menu" data-tooltip="Menu" data-tooltip-position="bottom" aria-expanded="false" aria-controls="site-nav">
 							<span class="icon icon-menu" aria-hidden="true"></span>
 						</button>
 					</div>

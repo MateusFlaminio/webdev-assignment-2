@@ -28,21 +28,20 @@
 @keyframes enter {
 	from {
 		opacity: 0;
-		transform: translateY(10px);
+		transform: scale(0.8);
 	}
 }
 
 .card {
-	display: grid;
-	grid-template-rows: auto 1fr;
+	display: flex;
+	flex-direction: column;
 	gap: var(--space-3);
-	height: 100%;
 	color: var(--ink);
 	text-align: center;
 	text-decoration: none;
 
 	&:hover .art {
-		box-shadow: 0 0 0 1px var(--accent-dark), 0 0 0 4px var(--accent), 0 0 24px color-mix(in srgb, var(--accent) 60%, transparent), 0 10px 20px var(--shadow);
+		box-shadow: 0 0 0 1px var(--accent-dark), 0 0 0 4px var(--accent), 0 0 24px rgb(255 220 94 / 0.6), 0 10px 20px var(--shadow);
 		transform: scale(1.06);
 		transition-duration: var(--motion-in);
 
@@ -78,9 +77,10 @@
 
 .art {
 	position: relative;
-	display: grid;
-	place-items: center;
-	align-content: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 	gap: var(--space-2);
 	aspect-ratio: 16 / 10;
 	padding: var(--space-3);
@@ -115,11 +115,12 @@
 }
 
 .body {
-	display: grid;
-	align-content: start;
-	justify-items: center;
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	align-items: center;
 	gap: var(--space-1);
-	padding-inline: var(--space-2);
+	padding: 0 var(--space-2);
 }
 
 .name {

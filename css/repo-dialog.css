@@ -2,7 +2,6 @@
 	width: min(560px, 100% - 2 * var(--gutter));
 	margin: auto;
 	max-height: 90dvh;
-	padding: 0;
 	overflow-y: auto;
 	color: var(--ink);
 	box-shadow: inset 0 0 0 4px var(--ring), 0 24px 60px var(--shadow);
@@ -39,11 +38,12 @@
 }
 
 .repo-facts {
-	display: grid;
-	grid-template-columns: repeat(3, minmax(0, 1fr));
+	display: flex;
 	gap: var(--space-3);
 
 	div {
+		flex: 1 1 0;
+		min-width: 0;
 		padding: var(--space-3);
 		border: 1px solid var(--edge);
 		border-radius: var(--radius-medium);
@@ -65,7 +65,11 @@
 	}
 
 	@media (max-width: 480px) {
-		grid-template-columns: 1fr;
+		flex-direction: column;
+
+		div {
+			flex: none;
+		}
 	}
 }
 
@@ -83,8 +87,9 @@
 	}
 
 	span {
-		min-width: 4px;
 		flex-basis: 0;
+		min-width: 4px;
+		background: var(--language-color, var(--language-fallback));
 	}
 }
 
@@ -122,10 +127,6 @@
 	&:empty {
 		display: none;
 	}
-}
-
-.language-bar span {
-	background: var(--language-color, var(--language-fallback));
 }
 
 .repo-actions {

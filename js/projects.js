@@ -117,6 +117,11 @@ function showBoard(repositories) {
 
 		sortButton.querySelector(".sort-label").textContent = label;
 		sortButton.setAttribute("aria-label", `Sort by: ${label}`);
+
+		const group = languageGroup.getBoundingClientRect();
+		const chip = languageGroup.querySelector('.chip[aria-pressed="true"]').getBoundingClientRect();
+
+		languageGroup.scrollBy({ left: chip.left - group.left - (group.width - chip.width) / 2 });
 	}
 
 	function setSortMenu(open) {

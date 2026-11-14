@@ -27,7 +27,7 @@
 			border: 2px solid var(--button-edge);
 			border-radius: 50%;
 			background: linear-gradient(var(--button-top), var(--accent));
-			box-shadow: inset 0 0 0 6px rgb(255 255 255 / 0.47), 6px 7px 0 var(--button-hard);
+			box-shadow: inset 0 0 0 6px var(--highlight), 6px 7px 0 var(--button-hard);
 			color: var(--accent-ink);
 
 			.icon {
@@ -38,9 +38,10 @@
 	}
 
 	.console-text {
-		display: grid;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 		gap: var(--space-3);
-		align-content: center;
 		padding: 36px 40px;
 
 		@media (max-width: 620px) {
@@ -61,39 +62,36 @@
 }
 
 .contact-links {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
+	display: flex;
+	flex-wrap: wrap;
 	gap: var(--space-3);
 	margin-top: var(--space-4);
 
-	@media (max-width: 620px) {
-		grid-template-columns: 1fr;
-	}
-
 	.contact-link {
-		display: grid;
-		grid-template-columns: 30px 1fr 18px;
+		display: flex;
 		align-items: center;
-		gap: 13px;
+		flex: 1 1 240px;
+		gap: 15px;
 		padding: var(--space-4) 18px;
 		border: 1px solid var(--edge);
 		border-radius: var(--radius-medium);
 		background: var(--panel);
 		color: var(--ink);
 		text-decoration: none;
-		transition: transform var(--motion-out);
 
 		&:hover {
 			border-color: var(--accent-dark);
 			outline: 3px solid var(--accent);
 			outline-offset: 2px;
-			transform: translateY(-4px);
-			transition-duration: var(--motion-in);
 		}
 
 		.logo {
 			width: 28px;
 			height: 28px;
+		}
+
+		span:nth-child(2) {
+			flex: 1;
 		}
 
 		b {
