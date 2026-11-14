@@ -93,6 +93,21 @@
 	}
 }
 
+.language-info {
+	display: grid;
+	align-content: start;
+	min-height: calc(var(--text-tiny) * 1.2 * 2 + var(--space-2));
+
+	@media (max-width: 560px) {
+		min-height: calc(var(--text-tiny) * 1.2 * 3 + var(--space-2) * 2);
+	}
+
+	.language-legend,
+	.language-status {
+		grid-area: 1 / 1;
+	}
+}
+
 .language-legend {
 	display: flex;
 	flex-wrap: wrap;
