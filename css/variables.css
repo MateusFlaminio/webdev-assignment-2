@@ -47,9 +47,15 @@
 	--blue-start: light-dark(#e7f1f5, #30434d);
 	--blue-end: light-dark(#cbdee7, #293840);
 
+	/* Language bar */
+	--language-fallback: light-dark(#a8a18c, #8b8573);
+
 	/* Type */
-	--font-body: "Nunito", ui-rounded, system-ui, -apple-system, "Segoe UI", sans-serif;
-	--font-monospace: "Space Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+	--font-body: "Rubik", ui-rounded, system-ui, -apple-system, "Segoe UI", sans-serif;
+	--font-monospace: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+	--weight-medium: 500;
+	--weight-semibold: 600;
+	--weight-bold: 700;
 	--text-tiny: 0.75rem;
 	--text-small: 0.875rem;
 	--text-medium: 1.125rem;

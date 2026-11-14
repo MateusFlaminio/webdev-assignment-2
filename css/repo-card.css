@@ -126,12 +126,13 @@
 	max-height: 2.4em;
 	overflow: hidden;
 	font-size: var(--text-medium);
-	font-weight: 800;
+	font-weight: var(--weight-bold);
 	line-height: 1.2;
 	overflow-wrap: anywhere;
 }
 
 .description {
+	min-height: 3em;
 	max-height: 3em;
 	overflow: hidden;
 	color: var(--muted);

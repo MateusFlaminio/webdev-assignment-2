@@ -1,0 +1,135 @@
+.repo-dialog {
+	width: min(560px, 100% - 2 * var(--gutter));
+	margin: auto;
+	max-height: 90dvh;
+	padding: 0;
+	overflow-y: auto;
+	color: var(--ink);
+	box-shadow: inset 0 0 0 4px var(--ring), 0 24px 60px var(--shadow);
+
+	&[open] {
+		animation: dialog-open 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+
+		@media (prefers-reduced-motion: reduce) {
+			animation: none;
+		}
+	}
+
+	&::backdrop {
+		background: rgb(30 27 18 / 0.55);
+	}
+
+	h2 {
+		font-size: var(--text-large);
+		overflow-wrap: anywhere;
+	}
+
+	.repo-description {
+		color: var(--muted);
+		line-height: 1.6;
+		overflow-wrap: anywhere;
+	}
+}
+
+@keyframes dialog-open {
+	from {
+		opacity: 0;
+		transform: scale(0.94);
+	}
+}
+
+.repo-facts {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: var(--space-3);
+
+	div {
+		padding: var(--space-3);
+		border: 1px solid var(--edge);
+		border-radius: var(--radius-medium);
+		background: var(--panel-soft);
+	}
+
+	dt {
+		color: var(--muted);
+		font-family: var(--font-monospace);
+		font-size: var(--text-tiny);
+		line-height: 1.2;
+		text-transform: uppercase;
+	}
+
+	dd {
+		margin-top: var(--space-1);
+		font-weight: var(--weight-bold);
+		overflow-wrap: anywhere;
+	}
+
+	@media (max-width: 480px) {
+		grid-template-columns: 1fr;
+	}
+}
+
+.language-bar {
+	display: flex;
+	gap: 2px;
+	height: 14px;
+	overflow: hidden;
+	border-radius: var(--radius-pill);
+	box-shadow: 0 0 0 1px var(--edge);
+
+	&:empty {
+		background: var(--panel-soft);
+		box-shadow: inset 0 0 0 1px var(--edge);
+	}
+
+	span {
+		min-width: 4px;
+		flex-basis: 0;
+	}
+}
+
+.language-legend {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space-2) var(--space-4);
+	list-style: none;
+
+	li {
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+		font-family: var(--font-monospace);
+		font-size: var(--text-tiny);
+		line-height: 1.2;
+
+		&::before {
+			content: "";
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			box-shadow: 0 0 0 1px var(--edge);
+			background: var(--language-color, var(--language-fallback));
+		}
+	}
+}
+
+.language-status {
+	color: var(--muted);
+	font-family: var(--font-monospace);
+	font-size: var(--text-tiny);
+	line-height: 1.2;
+
+	&:empty {
+		display: none;
+	}
+}
+
+.language-bar span {
+	background: var(--language-color, var(--language-fallback));
+}
+
+.repo-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space-3);
+}

@@ -13,7 +13,7 @@
 		border-radius: var(--radius-pill);
 		background: var(--panel);
 		box-shadow: inset 0 0 0 3px var(--ring), 0 2px 4px var(--shadow);
-		font-weight: 700;
+		font-weight: var(--weight-semibold);
 
 		.logo {
 			width: 22px;

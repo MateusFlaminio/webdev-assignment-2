@@ -1,9 +1,15 @@
-const clock = document.querySelector("#clock");
+const clocks = document.querySelectorAll("[data-clock]");
+
+const formats = {
+	time: { hour: "2-digit", minute: "2-digit" },
+	date: { weekday: "short", day: "numeric", month: "short" }
+};
 
 function updateClock() {
-	clock.textContent = new Date().toLocaleTimeString("pt-PT", {
-		hour: "2-digit",
-		minute: "2-digit"
+	const now = new Date();
+
+	clocks.forEach(clock => {
+		clock.textContent = now.toLocaleString("en-GB", formats[clock.dataset.clock]);
 	});
 }
 

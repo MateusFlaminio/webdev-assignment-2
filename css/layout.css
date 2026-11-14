@@ -34,7 +34,7 @@
 	background: var(--panel);
 	color: var(--ink);
 	font-size: var(--text-small);
-	font-weight: 800;
+	font-weight: var(--weight-bold);
 	text-decoration: none;
 
 	&:focus {
@@ -59,4 +59,9 @@
 		margin-top: var(--space-3);
 		color: var(--muted);
 	}
+}
+
+site-header,
+site-footer {
+	display: contents;
 }

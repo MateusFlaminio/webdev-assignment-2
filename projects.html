@@ -11,10 +11,13 @@
 		<link rel="stylesheet" href="css/components.css">
 		<link rel="stylesheet" href="css/nav.css">
 		<link rel="stylesheet" href="css/projects.css">
+		<link rel="stylesheet" href="css/repo-dialog.css">
 		<link rel="stylesheet" href="css/footer.css">
 
+		<script src="js/site-layout.js"></script>
 		<script src="js/repositories.js"></script>
 		<script src="js/repo-card.js"></script>
+		<script src="js/repo-dialog.js" defer></script>
 		<script src="js/projects.js"></script>
 		<script src="js/theme.js" defer></script>
 		<script src="js/clock.js" defer></script>
@@ -25,45 +28,7 @@
 		<a class="skip-link" href="#main">Skip to content</a>
 
 		<div class="site">
-			<header class="navbar">
-				<div class="container navbar-inner">
-					<a class="brand" href="./">
-						<span class="brand-orb">
-							<img src="assets/placeholder.webp" alt="placeholder">
-						</span>
-						<span class="brand-text">
-							<b>MATEUS FLAMÍNIO</b>
-							<small>COMPUTER ENGINEERING STUDENT</small>
-						</span>
-					</a>
-
-					<nav class="nav-links" id="site-nav" aria-label="Main">
-						<a href="./">Home</a>
-						<a href="background">Background</a>
-						<a href="projects" aria-current="page">Projects</a>
-					</nav>
-
-					<div class="nav-actions">
-						<span class="nav-clock" id="clock">--:--</span>
-
-						<div class="theme-container">
-							<button class="round-button theme-button" type="button" title="Theme" aria-label="Theme" aria-expanded="false" aria-controls="theme-menu">
-								<span class="icon icon-theme" aria-hidden="true"></span>
-							</button>
-
-							<div class="theme-menu hidden" id="theme-menu">
-								<button type="button" data-theme="system" aria-pressed="false">System</button>
-								<button type="button" data-theme="light" aria-pressed="false">Light</button>
-								<button type="button" data-theme="dark" aria-pressed="false">Dark</button>
-							</div>
-						</div>
-
-						<button class="round-button menu-button" type="button" title="Menu" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">
-							<span class="icon icon-menu" aria-hidden="true"></span>
-						</button>
-					</div>
-				</div>
-			</header>
+			<site-header current="projects"></site-header>
 
 			<main id="main">
 				<header class="container page-header">
@@ -93,6 +58,33 @@
 						</div>
 
 						<div class="panel-body">
+							<div class="project-controls">
+								<label class="project-search">
+									<span class="icon icon-search" aria-hidden="true"></span>
+									<input type="search" placeholder="Search channels" aria-label="Search repositories" autocomplete="off">
+								</label>
+
+								<div class="sort-container">
+									<button class="sort-button" type="button" aria-expanded="false" aria-controls="sort-menu">
+										<span class="sort-label">Recently updated</span>
+										<span class="icon icon-chevron-down" aria-hidden="true"></span>
+									</button>
+
+									<div class="sort-menu dropdown-menu hidden" id="sort-menu">
+										<button type="button" data-sort="updated" aria-pressed="true">Recently updated</button>
+										<button type="button" data-sort="stars" aria-pressed="false">Most stars</button>
+										<button type="button" data-sort="name" aria-pressed="false">Name A to Z</button>
+									</div>
+								</div>
+							</div>
+
+							<div class="project-languages" role="group" aria-label="Filter by language"></div>
+
+							<div class="project-empty hidden">
+								<p>No channels match your search.</p>
+								<button class="button pill" type="button">Clear filters</button>
+							</div>
+
 							<div class="project-stage">
 								<button class="round-button page-arrow previous hidden" type="button" aria-label="Previous page">
 									<span class="icon icon-arrow-right" aria-hidden="true"></span>
@@ -107,25 +99,53 @@
 
 							<p class="page-status hidden" aria-live="polite"></p>
 						</div>
+
+						<div class="wii-bar">
+							<a class="round-button" href="https://github.com/MateusFlaminio" target="_blank" rel="noopener" title="GitHub profile" aria-label="GitHub profile">
+								<span class="logo logo-github" aria-hidden="true"></span>
+							</a>
+
+							<div class="wii-clock">
+								<span class="wii-time" data-clock="time">--:--</span>
+								<span class="wii-date" data-clock="date"></span>
+							</div>
+
+							<a class="round-button" href="./" title="Home" aria-label="Home">
+								<span class="icon icon-house" aria-hidden="true"></span>
+							</a>
+						</div>
 					</div>
 				</section>
 			</main>
 
-			<footer class="site-footer">
-				<div class="container footer-inner">
-					<div class="footer-top">
-						<strong>MATEUS FLAMÍNIO</strong>
-
-						<nav class="footer-links" aria-label="Social">
-							<a href="https://github.com/MateusFlaminio" target="_blank" rel="noopener"><span class="logo logo-github" aria-hidden="true"></span> GitHub</a>
-							<a href="https://www.linkedin.com/in/mateus-flam%C3%ADnio-bba912349/" target="_blank" rel="noopener"><span class="logo logo-linkedin" aria-hidden="true"></span> LinkedIn</a>
-						</nav>
-
-						<small>© 2026 · University of Coimbra</small>
-					</div>
-					<p class="credits">Icons from Lucide (ISC license) and Simple Icons (CC0). Fonts: Nunito and Space Mono from Google Fonts.</p>
+			<dialog class="panel repo-dialog" aria-labelledby="repo-dialog-title">
+				<div class="channel-bar">
+					<span class="channel-title">Channel</span>
+					<span class="channel-dots" aria-hidden="true"><span></span><span></span><span></span></span>
 				</div>
-			</footer>
+
+				<div class="panel-body">
+					<h2 id="repo-dialog-title"></h2>
+					<p class="repo-description"></p>
+
+					<dl class="repo-facts">
+						<div><dt>Language</dt><dd class="repo-language"></dd></div>
+						<div><dt>Stars</dt><dd class="repo-stars"></dd></div>
+						<div><dt>Updated</dt><dd class="repo-updated"></dd></div>
+					</dl>
+
+					<div class="language-bar" aria-hidden="true"></div>
+					<ul class="language-legend"></ul>
+					<p class="language-status" aria-live="polite"></p>
+
+					<div class="repo-actions">
+						<a class="button primary" href="https://github.com/MateusFlaminio" target="_blank" rel="noopener">Open on GitHub</a>
+						<button class="button" type="button" autofocus>Close</button>
+					</div>
+				</div>
+			</dialog>
+
+			<site-footer></site-footer>
 		</div>
 	</body>
 </html>

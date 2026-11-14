@@ -18,7 +18,7 @@
 	.about-lead {
 		max-width: 16ch;
 		font-size: var(--text-heading);
-		font-weight: 800;
+		font-weight: var(--weight-bold);
 		line-height: 1.05;
 		text-wrap: balance;
 	}
@@ -50,7 +50,7 @@
 		border-bottom: 1px solid var(--ink);
 		color: var(--ink);
 		font-size: var(--text-small);
-		font-weight: 800;
+		font-weight: var(--weight-bold);
 		text-decoration: none;
 
 		&:hover {
