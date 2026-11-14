@@ -12,17 +12,18 @@
 		<link rel="stylesheet" href="css/nav.css">
 		<link rel="stylesheet" href="css/hero.css">
 		<link rel="stylesheet" href="css/about.css">
+		<link rel="stylesheet" href="css/memory-game.css">
 		<link rel="stylesheet" href="css/skills.css">
 		<link rel="stylesheet" href="css/contact.css">
 		<link rel="stylesheet" href="css/footer.css">
 
-		<script src="js/site-layout.js"></script>
-		<script src="js/theme.js" defer></script>
-		<script src="js/clock.js" defer></script>
-		<script src="js/nav.js" defer></script>
-		<script src="js/repositories.js" defer></script>
-		<script src="js/repo-count.js" defer></script>
-		<script src="js/skills.js" defer></script>
+		<script type="module" src="js/site-layout.js"></script>
+		<script type="module" src="js/theme.js"></script>
+		<script type="module" src="js/clock.js"></script>
+		<script type="module" src="js/nav.js"></script>
+		<script type="module" src="js/repo-count.js"></script>
+		<script type="module" src="js/skills.js"></script>
+		<script type="module" src="js/memory-game.js"></script>
 	</head>
 
 	<body>
@@ -82,7 +83,24 @@
 							</div>
 						</div>
 
-						<img class="about-photo" src="assets/placeholder.webp" alt="placeholder">
+						<div class="panel memory-game">
+							<div class="channel-bar">
+								<span class="channel-title">Here's a fun minigame for you</span>
+								<span class="channel-dots" aria-hidden="true"><span></span><span></span><span></span></span>
+							</div>
+
+							<div class="panel-body">
+								<div class="memory-header">
+									<span>Moves <b class="memory-moves">0</b></span>
+									<span>Best <b class="memory-best">–</b></span>
+									<button class="button pill memory-new" type="button">New game</button>
+								</div>
+
+								<div class="memory-grid" role="group" aria-label="Memory game cards"></div>
+
+								<p class="memory-status" aria-live="polite"></p>
+							</div>
+						</div>
 					</div>
 				</section>
 

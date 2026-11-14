@@ -2,7 +2,7 @@ const username = "MateusFlaminio";
 const cacheKey = "repositories-v2";
 const cacheLifetime = 10 * 60 * 1000;
 
-async function getRepositories() {
+export async function getRepositories() {
 	try {
 		const cached = JSON.parse(sessionStorage.getItem(cacheKey));
 		if (cached && Date.now() - cached.savedAt < cacheLifetime) {
@@ -26,7 +26,7 @@ async function getRepositories() {
 	}
 }
 
-async function getLanguages(name) {
+export async function getLanguages(name) {
 	const key = `languages:${name}`;
 
 	try {

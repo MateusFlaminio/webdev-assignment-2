@@ -65,3 +65,8 @@ site-header,
 site-footer {
 	display: contents;
 }
+
+site-header:not(:defined) {
+	display: block;
+	min-height: var(--nav-height);
+}

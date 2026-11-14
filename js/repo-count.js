@@ -1,9 +1,7 @@
-async function showRepoCount() {
-	const repositories = await getRepositories();
+import { getRepositories } from "./repositories.js";
 
-	if (repositories) {
-		document.querySelector(".repos-count").textContent = repositories.length;
-	}
+const repositories = await getRepositories();
+
+if (repositories) {
+	document.querySelector(".repos-count").textContent = repositories.length;
 }
-
-showRepoCount();

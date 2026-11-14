@@ -1,3 +1,6 @@
+import { getRepositories } from "./repositories.js";
+import { setupRepositoryDialog } from "./repo-dialog.js";
+
 const slotsPerPage = 12;
 const searchDelay = 250;
 
@@ -10,7 +13,6 @@ const sorters = {
 async function main() {
 	const [repositories] = await Promise.all([
 		getRepositories(),
-		new Promise(resolve => document.addEventListener("DOMContentLoaded", resolve)),
 		customElements.whenDefined("repo-card"),
 	]);
 

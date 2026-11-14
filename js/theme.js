@@ -34,7 +34,6 @@ themeOptions.forEach(option => {
 	});
 });
 
-
 document.addEventListener("click", event => {
 	if (!event.target.closest(".theme-container")) {
 		setMenu(false);

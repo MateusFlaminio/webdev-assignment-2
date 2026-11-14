@@ -1,19 +1,20 @@
 .about-content {
-	display: grid;
-	grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+	display: flex;
+	justify-content: center;
 	gap: 6%;
-	align-items: center;
-
-	@media (max-width: 900px) {
-		grid-template-columns: 1fr;
-		gap: var(--space-5);
-	}
 
 	.about-text {
 		display: flex;
+		flex: 1.1 1 0;
 		flex-direction: column;
 		align-items: flex-start;
 		gap: var(--space-4);
+		min-width: 0;
+	}
+
+	.memory-game {
+		flex: 1 1 0;
+		min-width: 0;
 	}
 
 	.about-lead {
@@ -27,14 +28,6 @@
 	.about-description {
 		color: var(--muted);
 		line-height: 1.8;
-	}
-
-	.about-photo {
-		width: 100%;
-		aspect-ratio: 4 / 3;
-		border: 1px solid var(--edge);
-		border-radius: 10px;
-		object-fit: cover;
 	}
 
 	.about-links {
@@ -56,6 +49,17 @@
 
 		&:hover {
 			border-color: var(--accent-dark);
+		}
+	}
+
+	@media (max-width: 900px) {
+		flex-direction: column;
+		align-items: stretch;
+		gap: var(--space-5);
+
+		.about-text,
+		.memory-game {
+			flex: none;
 		}
 	}
 }

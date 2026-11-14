@@ -1,4 +1,5 @@
-const logosUrl = "https://cdn.jsdelivr.net/npm/simple-icons@13.15.0/icons";
+import { logosUrl } from "./logos.js";
+
 const stylesheet = new CSSStyleSheet();
 
 const languageLogos = {
@@ -32,7 +33,7 @@ function truncate(text, limit) {
 }
 
 class RepoCard extends HTMLElement {
-	static get observedAttributes() { return ["name", "description", "language", "stars", "url"] }
+	static observedAttributes = ["name", "description", "language", "stars", "url"];
 
 	constructor() {
 		super();
@@ -71,14 +72,18 @@ class RepoCard extends HTMLElement {
 			this.repoName.textContent = truncate(value, 40);
 			this.link.title = value;
 		}
-		if (attribute === "description")
+		if (attribute === "description") {
 			this.repoDescription.textContent = truncate(value || "No description yet.", 70);
-		if (attribute === "language")
+		}
+		if (attribute === "language") {
 			this.showLanguage(value);
-		if (attribute === "stars")
+		}
+		if (attribute === "stars") {
 			this.repoStars.textContent = value;
-		if (attribute === "url")
+		}
+		if (attribute === "url") {
 			this.link.href = value;
+		}
 	}
 
 	showLanguage(language) {
@@ -90,7 +95,10 @@ class RepoCard extends HTMLElement {
 	}
 }
 
-fetch("css/repo-card.css")
-	.then(response => response.text())
-	.then(css => stylesheet.replaceSync(css))
-	.finally(() => customElements.define("repo-card", RepoCard));
+try {
+	const response = await fetch("css/repo-card.css");
+	stylesheet.replaceSync(await response.text());
+}
+finally {
+	customElements.define("repo-card", RepoCard);
+}

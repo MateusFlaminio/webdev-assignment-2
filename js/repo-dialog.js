@@ -1,3 +1,5 @@
+import { getLanguages } from "./repositories.js";
+
 const dialog = document.querySelector(".repo-dialog");
 const hashPrefix = "#repo/";
 
@@ -27,7 +29,7 @@ let repositories = [];
 let opener = null;
 let languageRequest = 0;
 
-function setupRepositoryDialog(allRepositories, grid) {
+export function setupRepositoryDialog(allRepositories, grid) {
 	repositories = allRepositories;
 
 	grid.addEventListener("click", event => {
