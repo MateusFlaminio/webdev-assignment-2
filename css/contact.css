@@ -78,11 +78,14 @@
 		background: var(--panel);
 		color: var(--ink);
 		text-decoration: none;
+		transition: transform var(--motion-out);
 
 		&:hover {
-			border-color: var(--accent-dark);
-			outline: 3px solid var(--accent);
-			outline-offset: 2px;
+			transition-duration: var(--motion-in);
+
+			@media (prefers-reduced-motion: no-preference) {
+				transform: scale(1.01);
+			}
 		}
 
 		.logo {

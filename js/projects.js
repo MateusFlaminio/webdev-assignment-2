@@ -74,7 +74,7 @@ function showBoard(repositories) {
 
 	function createChip(language, label, count) {
 		const chip = document.createElement("button");
-		chip.className = "button pill chip";
+		chip.className = "button chip";
 		chip.type = "button";
 		chip.dataset.language = language;
 		chip.textContent = `${label} · ${count}`;
