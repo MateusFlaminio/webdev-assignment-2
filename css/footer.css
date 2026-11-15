@@ -18,6 +18,17 @@
 		font-family: var(--font-monospace);
 		font-size: var(--text-tiny);
 
+		.footer-brand {
+			display: inline-flex;
+			align-items: center;
+			gap: var(--space-3);
+
+			img {
+				width: 28px;
+				height: 28px;
+			}
+		}
+
 		small {
 			color: #a8a18c;
 			font-size: var(--text-tiny);

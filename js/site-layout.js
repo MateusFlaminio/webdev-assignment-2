@@ -17,7 +17,7 @@ class SiteHeader extends HTMLElement {
 				<div class="container navbar-inner">
 					<a class="brand" href="./">
 						<span class="brand-orb">
-							<img src="assets/images/pfp.webp" alt="Profile picture">
+							<img src="assets/images/pfp.webp" alt="" width="150" height="150">
 						</span>
 						<span class="brand-text">
 							<b>MATEUS FLAMÍNIO</b>
@@ -59,7 +59,10 @@ class SiteFooter extends HTMLElement {
 			<footer class="site-footer">
 				<div class="container footer-inner">
 					<div class="footer-top">
-						<strong>MATEUS FLAMÍNIO</strong>
+						<span class="footer-brand">
+							<img src="assets/favicon.svg" alt="" width="128" height="128">
+							<strong>MATEUS FLAMÍNIO</strong>
+						</span>
 
 						<nav class="footer-links" aria-label="Social">
 							<a href="https://github.com/MateusFlaminio" target="_blank" rel="noopener"><span class="logo logo-github" aria-hidden="true"></span> GitHub</a>
@@ -68,7 +71,7 @@ class SiteFooter extends HTMLElement {
 
 						<small>© 2026 · University of Coimbra</small>
 					</div>
-					<p class="credits">Icons from Lucide (ISC license) and Simple Icons (CC0). Fonts: Nunito and Space Mono from Google Fonts.</p>
+					<p class="credits">Icons from Lucide (ISC license) and Simple Icons (CC0). Fonts: Rubik and JetBrains Mono from Google Fonts.</p>
 				</div>
 			</footer>`;
 	}
