@@ -12,7 +12,7 @@
 	--kicker: light-dark(#7b6210, #e3c04a);
 	--footer: #2a2822;
 
-	/* Soft white (no pure #fff or #000 anywhere; the dark overlays use rgb(17 16 13)) */
+	/* Soft white */
 	--off-white: #fcfbf7;
 	--highlight: rgb(252 251 247 / 0.45);
 
@@ -27,11 +27,14 @@
 	--button-edge: #b8951d;
 	--button-hard: #b89318;
 
+	/* Success */
+	--mint-edge: #3f8a6c;
+
 	/* Depth */
 	--shadow: light-dark(rgb(79 75 63 / 0.16), rgb(17 16 13 / 0.38));
 	--ring: light-dark(rgb(252 251 247 / 0.42), rgb(252 251 247 / 0.04));
 	--ring-strong: light-dark(var(--off-white), rgb(252 251 247 / 0.04));
-	--gloss: light-dark(rgb(252 251 247 / 0.65), rgb(252 251 247 / 0.08));
+	--gloss: light-dark(rgb(252 251 247 / 0.33), rgb(252 251 247 / 0.08));
 
 	/* Tooltip */
 	--tooltip-background: light-dark(#2a2822, #f2eedf);
