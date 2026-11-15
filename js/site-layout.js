@@ -69,7 +69,7 @@ class SiteFooter extends HTMLElement {
 							<a href="https://www.linkedin.com/in/mateus-flam%C3%ADnio-bba912349/" target="_blank" rel="noopener"><span class="logo logo-linkedin" aria-hidden="true"></span> LinkedIn</a>
 						</nav>
 
-						<small>© 2026 · University of Coimbra</small>
+						<small>© 2026 · Web Development Course (UC)</small>
 					</div>
 					<p class="credits">Icons from Lucide (ISC license) and Simple Icons (CC0). Fonts: Rubik and JetBrains Mono from Google Fonts.</p>
 				</div>
