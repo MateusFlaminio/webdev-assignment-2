@@ -12,6 +12,15 @@ The website contains three main pages:
 - **Background:** my work experience, academic path and other courses as timelines.
 - **Projects:** my public GitHub repositories as a grid of channels (mimicking the Wii menu).
 
+## Project Structure
+The codebase is organized into the following folders and files:
+- `index.html`, `background.html`, `projects.html`: Home, background, and projects pages respectively.
+- `css/`: Stylesheets divided by component or section, with shared variables and base styles.
+- `js/`: JavaScript files divided by feature.
+- `data/`: Data files (only `skills.json` for this project).
+- `assets/`: Images, icons, and logos.
+- `web-server/server.js`: Node.js development server for local testing.
+
 ## Features
 - The projects page fetches my public repositories from the GitHub API and displays them as channel tiles, with a details dialog for each project showing its description, stars, last update, and a language breakdown bar. A loading indicator is displayed while the data is being fetched.
 - Projects can be searched by name, description, or language, filtered by language, sorted in various ways, and paginated.
