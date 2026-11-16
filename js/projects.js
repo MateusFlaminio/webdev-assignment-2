@@ -1,7 +1,7 @@
 import { getRepositories } from "./repositories.js";
 import { setupRepositoryDialog } from "./repo-dialog.js";
 
-const slotsPerPage = 12;
+const slotsPerPage = 4;
 const searchDelay = 250;
 
 const sorters = {

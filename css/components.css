@@ -263,6 +263,10 @@
 	}
 
 	@media (hover: hover) {
+		&:hover {
+			z-index: 20;
+		}
+
 		&:hover::before,
 		&:hover::after {
 			opacity: 1;

@@ -121,7 +121,7 @@
 	display: grid;
 	grid-template-columns: auto minmax(0, 1fr) auto;
 	align-items: center;
-	gap: var(--space-4);
+	gap: var(--space-6);
 
 	&:has(.page-arrow.hidden) {
 		grid-template-columns: minmax(0, 1fr);
@@ -129,6 +129,7 @@
 
 	@media (max-width: 560px) {
 		grid-template-columns: 1fr 1fr;
+		gap: var(--space-4);
 
 		.project-grid {
 			grid-column: 1 / -1;

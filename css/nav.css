@@ -92,6 +92,12 @@
 
 		&.open {
 			display: flex;
+			transform-origin: top right;
+			animation: dropdown-in var(--motion-out) both;
+
+			@media (prefers-reduced-motion: reduce) {
+				animation: none;
+			}
 		}
 
 		a {
